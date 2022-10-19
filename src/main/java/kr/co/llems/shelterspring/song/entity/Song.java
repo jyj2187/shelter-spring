@@ -5,6 +5,7 @@ import kr.co.llems.shelterspring.util.audit.Auditable;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -14,12 +15,16 @@ public class Song extends Auditable {
     private Long songId;
     // TODO: 객체로 받을 것. -> Entity? or Embedded?
     private String title;
+    private String coverArt;
     private String description;
+    private LocalDate releaseDate;
     private String lyric;
     @Enumerated(EnumType.STRING)
     private SongStatus songStatus;
-
+    //private Genre genre;
 //    private Artist artist;
+    //private Album album;
+    //private Integer trackNum;
 
     @Builder
     public Song(Long songId, String title, String description, String lyric, SongStatus songStatus) {
